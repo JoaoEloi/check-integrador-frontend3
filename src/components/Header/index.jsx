@@ -1,5 +1,6 @@
 import './header.scss'
 import Button from 'react-bootstrap/Button'
+import Logo from '../../assets/Logo.png'
 
 
 export default function Header() {
@@ -13,6 +14,8 @@ export default function Header() {
     return(
 
         <header id="header" className="header_container_home">
+
+<img src={Logo} alt="Logo do site" className="logo_header_home" />
     
             <ul className="container_buttons">
 

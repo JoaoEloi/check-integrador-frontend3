@@ -6,10 +6,22 @@
     flex-wrap: wrap; 
 }   
 
+.logo_header_home{
+    padding: 0 10px;
+    max-width: 150px;
+    max-height: 75px;
+    min-width: 30px;
+    min-height: 35px;
+    margin: 5px; 
+    border-radius: 30px;
+}
+
 .container_buttons{
     display: flex;
     list-style: none;
-    margin-top: 15px;
+    flex-wrap: wrap; 
+    
+    
 }
 
 .header_buttons_item{

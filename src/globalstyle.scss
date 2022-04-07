@@ -1,1 +1,10 @@
 @import "~bootstrap/scss/bootstrap";
+
+$font-stack: Noto Serif , serif;
+
+*{
+    padding: 0;
+    margin: 0;
+    font: 100% $font-stack;
+    scroll-behavior: smooth;
+}

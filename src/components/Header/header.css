@@ -1,0 +1,27 @@
+.header_container_home {
+  background-color: #A461A1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.container_buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
+  margin-top: 15px;
+}
+
+.header_buttons_item {
+  margin: 0 10px;
+}
+/*# sourceMappingURL=header.css.map */

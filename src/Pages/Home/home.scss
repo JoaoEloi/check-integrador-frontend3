@@ -1,0 +1,23 @@
+.home_container{
+    display: flex;
+    flex-wrap: wrap;
+    background-color: black;
+    flex-direction: column;
+    color: white;
+}
+
+.home_footer{
+    align-self: flex-end;
+}
+
+.carousel_img{
+    width: 300px;
+    height: 300px;
+}
+
+.container_card_home{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    background-color: black;
+}

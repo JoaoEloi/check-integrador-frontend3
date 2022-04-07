@@ -1,0 +1,9 @@
+.footer_container_home {
+  background-color: #A461A1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+/*# sourceMappingURL=footer.css.map */

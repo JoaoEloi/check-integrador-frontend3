@@ -1,0 +1,20 @@
+.container_cards{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.card_home_item{
+    color: white;
+    font-size: 1rem;
+    width: 280px;
+    height: 420px;
+    margin: 20px;
+    padding: 20px 10px;
+    background: rgba( 0, 0, 0, 0.65 );
+    box-shadow: 0 8px 32px 0 rgba(186, 145, 199, 0.37);
+    backdrop-filter: blur( 20px );
+    -webkit-backdrop-filter: blur( 20px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+}

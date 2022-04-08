@@ -1,0 +1,14 @@
+.products_container{
+    display: flex;
+    flex-wrap: wrap;
+    background-color: black;
+    flex-direction: column;
+    color: white;
+    padding-top: 30px;
+}
+
+.title{
+    text-align: center;
+    padding-bottom: 50px;
+    padding-top: 10px;
+}

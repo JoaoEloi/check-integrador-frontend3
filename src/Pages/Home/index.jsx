@@ -13,13 +13,6 @@ export default function Home() {
 
             <h1>Home</h1>
 
-            <div id="body" className="container_card_home">
-                {
-                    CardsInfo.map((item) => (
-                        <Cards item={item} />
-                    ))
-                }
-            </div>
 
             <Carousel >
                 <Carousel.Item>
@@ -60,7 +53,13 @@ export default function Home() {
                 </Carousel.Item>
             </Carousel>
 
-
+            <div id="body" className="container_card_home">
+                {
+                    CardsInfo.map((item) => (
+                        <Cards item={item} />
+                    ))
+                }
+            </div>
 
 
 

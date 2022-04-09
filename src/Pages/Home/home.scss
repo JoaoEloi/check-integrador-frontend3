@@ -6,14 +6,55 @@
     color: white;
 }
 
+.title{
+    text-align: center;
+    padding-bottom: 50px;
+    padding-top: 10px;
+}
+
 .home_footer{
     align-self: flex-end;
 }
 
-.carousel_img{
-    width: 300px;
-    height: 300px;
+.carousel_container{
+    align-self: center;
+    overflow: hidden;
+    border-width: .2rem .2rem 0;
+    border-radius: 8px 8px 0 0;
+    background-color: white;
+    position: relative;
+    padding: 1rem;
+    box-sizing: border-box;
+    border: .2rem solid #a41818;
+    border-top-width: 0.2rem;
+    border-right-width: 0.2rem;
+    border-bottom-width: 0.2rem;
+    border-left-width: 0.2rem;
+    border-radius: 8px;
+    margin-right: 0;
+    margin-left: 0;
 }
+
+// .carousel_item{
+//     position: relative;
+//     display: none;
+//     float: left;
+//     width: 100%;
+// }
+
+.carousel_img{
+    display: flex;
+    width: 400px;
+    height: 400px;
+    flex-direction: column;
+    box-sizing: border-box;
+    width: 100% !important;
+}
+
+// .carousel_text{
+//     display: flex;
+//     justify-content: center;
+// }
 
 .container_card_home{
     display: flex;

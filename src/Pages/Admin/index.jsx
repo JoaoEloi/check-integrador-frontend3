@@ -2,8 +2,10 @@ import './admin.css'
 
 export default function Administracao() {
     return (
-
-        <h1>Admin</h1>
-
+        <>
+            <div className="title">
+                <h1>Admin</h1>
+            </div>
+        </>
     )
 }

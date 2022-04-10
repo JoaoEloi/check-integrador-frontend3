@@ -1,9 +1,9 @@
 .header_container_home {
     background-color: #A461A1;
     display: flex;
-    justify-content: space-between; 
+    justify-content: space-between;
     align-items: center; 
-    flex-wrap: wrap; 
+    flex-wrap: wrap;
 }   
 
 .logo_header_home{
@@ -20,8 +20,8 @@
     display: flex;
     list-style: none;
     flex-wrap: wrap; 
-    
-    
+    margin-top: 15px;
+    align-content: space-around;
 }
 
 .header_buttons_item{

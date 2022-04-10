@@ -4,6 +4,9 @@
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   background-color: black;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
@@ -23,12 +26,39 @@
       align-self: flex-end;
 }
 
+.carousel_container {
+  overflow: hidden;
+  border-width: .2rem .2rem 0;
+  border-radius: 8px 8px 0 0;
+  position: relative;
+  padding: 1rem;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border: .2rem solid #a41818;
+  border-top-width: 0.2rem;
+  border-right-width: 0.2rem;
+  border-bottom-width: 0.2rem;
+  border-left-width: 0.2rem;
+  border-radius: 8px;
+  margin-right: 0;
+  margin-left: 0;
+  width: 50%;
+}
+
+.carousel_item {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
 
 .carousel_img {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 400px;
   height: 400px;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
@@ -36,7 +66,7 @@
           flex-direction: column;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  width: 100% !important;
+  width: 50%;
 }
 
 .container_card_home {

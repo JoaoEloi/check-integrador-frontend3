@@ -25,5 +25,22 @@
 }
 
 .header_buttons_item{
-    margin: 0 10px; 
+    margin: 0 10px;
+    background-color: black; 
+    
+}
+
+.contai-nav{
+    display: flex;
+    //justify-content: space-between; 
+    //align-items: center; 
+    
+    //flex-wrap: wrap;
+}
+
+.nav1{
+    display: flex;
+    gap: 10px;
+    //align-self: flex-end;
+    justify-content: space-between;
 }

@@ -2,6 +2,7 @@ import './header.scss'
 import Button from 'react-bootstrap/Button'
 import Logo from '../../assets/Logo.png'
 import { Link } from 'react-router-dom'
+import { Navbar, Nav, Container } from 'react-bootstrap'
 
 
 export default function Header() {
@@ -42,7 +43,6 @@ export default function Header() {
             </ul>
 
         </header>
-
     )
-
 }
+

@@ -6,6 +6,8 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -ms-flex-line-pack: distribute;
+      align-content: space-around;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -30,6 +32,9 @@
   list-style: none;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  margin-top: 15px;
+  -ms-flex-line-pack: distribute;
+      align-content: space-around;
 }
 
 .header_buttons_item {

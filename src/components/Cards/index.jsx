@@ -1,21 +1,20 @@
 import './cards.scss'
 import Button from 'react-bootstrap/Button'
-import { GoRepo } from "react-icons/go";
+import { Card } from 'react-bootstrap';
+
 
 export default function Cards({ item }) {
     return (
-        <div className="container_cards">
 
-                <div className="card_home_item">
 
-                    {/* <img src={CardIMG} className="img_card" alt="Foto do Card" /> */}
+        <Card className="card_home_item">
+            <Card.Img src={item.image} className="img_card" alt="Foto do Card" />
+            <Card.Body className="card_body">
+                <Card.Title className='card_title'>{item.title}</Card.Title>
+                <Card.Text>{item.description}</Card.Text>
+                <Button color="dark" className="buton_item">{item.button}</Button>
+            </Card.Body>
+        </Card>
 
-                    <h1>{item.title}</h1>
-                    <p>{item.description}</p>
-                    
-                        <Button  color="dark" className="footer_buton_item">{item.button} <GoRepo size="20px" /> </Button>
-                    
-                </div>
-        </div>
     )
 }

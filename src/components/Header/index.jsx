@@ -21,31 +21,31 @@ export default function Header() {
 
                 <li> 
                     <Link to="/">
-                        <Button color="dark" className="header_buttons_item">Home</Button>
+                        <Button variant="dark" className="header_buttons_item">Home</Button>
                     </Link> 
                 </li>
 
                 <li> 
                     <Link to="/produtos">
-                        <Button color="dark" className="header_buttons_item">Produtos</Button>
+                        <Button variant="dark" className="header_buttons_item">Produtos</Button>
                     </Link> 
                 </li>
 
                 <li> 
                     <Link to="/carrinho">
-                        <Button color="dark" className="header_buttons_item">Carrinho</Button>
+                        <Button variant="dark" className="header_buttons_item">Carrinho</Button>
                     </Link> 
                 </li>
 
                 <li> 
                     <Link to="/administ">
-                        <Button color="dark" className="header_buttons_item">Administração</Button>
+                        <Button variant="dark" className="header_buttons_item">Administração</Button>
                     </Link> 
                 </li>
 
                 <li> 
                     <Link to="/sobrenos">
-                        <Button color="dark" className="header_buttons_item">Sobre nós</Button>
+                        <Button variant="dark" className="header_buttons_item">Sobre nós</Button>
                     </Link> 
                 </li>
 

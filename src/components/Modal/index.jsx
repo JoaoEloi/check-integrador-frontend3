@@ -18,7 +18,7 @@ export default function Example() {
     return (
         
     <>
-        <Button variant="primary" onClick={handleShow}>
+        <Button variant="dark" onClick={handleShow}>
             Adicionar Produto
         </Button>
 

@@ -4,6 +4,9 @@ import { Card } from 'react-bootstrap';
 
 
 export default function Cards({ item }) {
+    const addToCart = () => {
+        console.log("Adicionado!")
+    }
     return (
 
 
@@ -12,7 +15,7 @@ export default function Cards({ item }) {
             <Card.Body className="card_body">
                 <Card.Title className='card_title'>{item.title}</Card.Title>
                 <Card.Text>{item.description}</Card.Text>
-                <Button color="dark" className="buton_item">{item.button}</Button>
+                <Button onClick={addToCart} className="buton_item">{item.button}</Button>
             </Card.Body>
         </Card>
 

@@ -1,5 +1,10 @@
 .header_container_home {
-    background-color: #A461A1;
+    background-color: rgba(150,38,38,0.8);
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    z-index: 100;
     display: flex;
     justify-content: space-between;
     align-items: center; 

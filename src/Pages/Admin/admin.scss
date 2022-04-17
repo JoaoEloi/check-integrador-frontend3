@@ -1,5 +1,125 @@
+
 .title{
     text-align: center;
     padding-bottom: 50px;
     padding-top: 10px;
+    color:black;
+}
+
+.h1-do-todo {
+    color: #fff;
+    font-size: 1.4rem;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.app {
+    display: flex;
+    flex: 1;
+    min-height: 100vh;
+}
+
+.form-do-todo {
+    background: #4b7bec;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    min-height: 100vh;
+    max-width: 400px;
+    margin: auto;
+    padding: 10px;
+}
+
+.inputs {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.row {
+    display: flex;
+}
+
+.row > label-do-todo {
+    display: flex;
+    flex: 1;
+}
+
+.label-do-todo {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+}
+
+.checkbox {
+    display: flex;
+    flex-direction: row;
+    margin-left: 20px;
+    align-items: center;
+}
+
+.span-do-todo {
+    margin-bottom: 5px;
+    color: #fff;
+}
+
+.input-do-todo {
+    padding: 10px;
+    font-family: "Poppins", sans-serif;
+    font-size: 1rem;
+    height: 55px;
+    border: none;
+    border-radius: 5px;
+}
+
+.container-buttons-todo {
+    display: flex;
+    /* flex: 1; */
+    margin-top: 15px;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.button-todo {
+    height: 50px;
+    width: 185px;
+    background: #fff;
+    border: none;
+    border-radius: 2px;
+}
+
+.button-todo:last-child {
+    background: transparent;
+    border: 1px solid #fff;
+    color: #fff;
+}
+
+.container-dos-todos {
+    margin: auto;
+    list-style: none;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    height: 100vh;
+    padding: 5px;
+    overflow-y: scroll;
+}
+
+.teste-do-todo {
+    background: #f0f0f0;
+    margin: 2px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.container-buttons {
+    display: flex;
+    gap: 5px;
+}
+
+.p-do-todo {
+    font-weight: 300;
 }

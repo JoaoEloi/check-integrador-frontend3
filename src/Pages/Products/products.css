@@ -10,11 +10,20 @@
       -ms-flex-direction: column;
           flex-direction: column;
   color: white;
-  padding-top: 30px;
+  padding-top: 120px;
 }
 
 .title {
   text-align: center;
   padding-top: 10px;
+}
+
+.container_card_home {
+  width: 80%;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  padding-bottom: 100px;
+  padding-top: 80px;
 }
 /*# sourceMappingURL=products.css.map */

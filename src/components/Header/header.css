@@ -1,13 +1,16 @@
 .header_container_home {
-  background-color: #A461A1;
+  background-color: rgba(150, 38, 38, 0.8);
+  position: fixed;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  z-index: 100;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  -ms-flex-line-pack: distribute;
-      align-content: space-around;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -39,5 +42,22 @@
 
 .header_buttons_item {
   margin: 0 10px;
+  background-color: black;
+}
+
+.contai-nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.nav1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 10px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 /*# sourceMappingURL=header.css.map */

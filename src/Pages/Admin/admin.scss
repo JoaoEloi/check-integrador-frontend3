@@ -1,9 +1,15 @@
+.admin_container {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: black;
+    flex-direction: column;
+    color: white;
+    padding-top: 120px;
+}
 
 .title{
     text-align: center;
-    padding-bottom: 50px;
     padding-top: 10px;
-    color:black;
 }
 
 .h1-do-todo {
@@ -13,18 +19,12 @@
     text-align: center;
 }
 
-.app {
-    display: flex;
-    flex: 1;
-    min-height: 100vh;
-}
-
 .form-do-todo {
-    background: #4b7bec;
+    background: black;
     display: flex;
     flex: 1;
     flex-direction: column;
-    min-height: 100vh;
+    min-height: 70vh;
     max-width: 400px;
     margin: auto;
     padding: 10px;
@@ -95,31 +95,31 @@
     color: #fff;
 }
 
-.container-dos-todos {
-    margin: auto;
-    list-style: none;
+.section-dos-cards{
     display: flex;
-    flex: 1;
-    flex-direction: column;
-    height: 100vh;
-    padding: 5px;
-    overflow-y: scroll;
+    justify-content: space-around;
+    flex-wrap: wrap;
 }
 
-.teste-do-todo {
-    background: #f0f0f0;
-    margin: 2px;
-    padding: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+.Card-dos-produtos{
+    color: white;
+    font-size: 1rem;
+    width: 280px;
+    height: 480px;
+    margin: 20px;
+    padding: 20px 10px;
+    background: rgba( 0, 0, 0, 0.65 );
+    box-shadow: 0 8px 32px 0 rgba(186, 145, 199, 0.37);
+    backdrop-filter: blur( 20px );
+    -webkit-backdrop-filter: blur( 20px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
 
-.container-buttons {
-    display: flex;
-    gap: 5px;
+.card_title{
+padding-bottom: 20px;
 }
 
-.p-do-todo {
-    font-weight: 300;
+.card_body{
+    text-align: center;
 }

@@ -2,6 +2,7 @@ import './admin.scss'
 import Modal from '../../components/Modal'
 import { useEffect, useState } from "react";
 import { FiCheck, FiEdit, FiTrash } from "react-icons/fi";
+import { Card } from 'react-bootstrap';
 
 export default function Administracao() {
 
@@ -118,20 +119,19 @@ export default function Administracao() {
 
     return (
         <>
-            <div className="title">
-                <h1>Admin</h1>
-            </div>
+            <div className="admin_container">
 
-
-            <div className="app">
+                <div className="title">
+                    <h1>Admin</h1>
+                </div>
 
                 <form className="form-do-todo" onSubmit={id ? editProduto : newProduto}>
-                <h1 className="h1-do-todo" >Produtos List - 2.0</h1>
+                <h1 className="h1-do-todo" >Cadastrar Produto</h1>
                 <div className="inputs">
                 <label className="label-do-todo">
-                    <span className="span-do-todo" >Título</span>
+                    <span className="span-do-todo" >Nome do produto</span>
                     <input className="input-do-todo"
-                    placeholder="Titulo"
+                    placeholder="Nome do produto"
                     value={title}
                     onChange={(event) => setTitle(event.target.value)}
                     />
@@ -164,7 +164,25 @@ export default function Administracao() {
                 </button>
                 </div>
             </form>
-            <ul className="container-dos-todos">
+
+            <section className="section-dos-cards">
+                {produtos.map((produto) => (
+                    <Card className="Card-dos-produtos">
+                        <Card.Body className="card_body">
+                            <Card.Title className="card_title">{produto.title}</Card.Title>
+                            <Card.Text className="card_text">{produto.description}</Card.Text>
+                            <Card.Text className="card_text">{produto.price}</Card.Text>
+                            <Card.Text className="card_text">{produto.id}</Card.Text>
+                        </Card.Body>
+                        <FiEdit size={20} color="white" onClick={() => fillStates(produto)} />
+                        <FiTrash size={20} color="white" onClick={() => deleteProduto(produto.id)}/>
+                        <FiCheck size={20} color="white" onClick={() => checkProduto(produto.id, produto.status)}/>
+                    </Card>
+                ))}
+                {loading && <h3>Carregando dados...</h3>}
+            </section>
+
+            {/* <ul className="container-dos-todos">
                 {produtos.map((produto) => (
                 <li>
                     <div>
@@ -189,10 +207,9 @@ export default function Administracao() {
                 </li>
                 ))}
                 {loading && <h3>Carregando dados...</h3>}
-            </ul>
-            </div>
+            </ul> */}
 
-            <Modal />
+            </div>
         </>
     )
 }

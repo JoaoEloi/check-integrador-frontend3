@@ -1,6 +1,10 @@
-.container_card_home{
+@mixin baseDesing {
     display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
     background-color: black;
+    flex-wrap: wrap;
+}
+
+.container_card_home{
+    @include baseDesing;
+    justify-content: space-around;
 }

@@ -3,6 +3,7 @@ import Modal from '../../components/Modal'
 import { useEffect, useState } from "react";
 import { FiCheck, FiEdit, FiTrash } from "react-icons/fi";
 import { Card } from 'react-bootstrap';
+import Login from '../../components/Login';
 
 export default function Administracao() {
 
@@ -121,94 +122,66 @@ export default function Administracao() {
         <>
             <div className="admin_container">
 
-                <div className="title">
-                    <h1>Admin</h1>
-                </div>
+                    <div className="title">
+                        <h1>Admin</h1>
+                    </div>
 
-                <form className="form-do-todo" onSubmit={id ? editProduto : newProduto}>
-                <h1 className="h1-do-todo" >Cadastrar Produto</h1>
-                <div className="inputs">
-                <label className="label-do-todo">
-                    <span className="span-do-todo" >Nome do produto</span>
-                    <input className="input-do-todo"
-                    placeholder="Nome do produto"
-                    value={title}
-                    onChange={(event) => setTitle(event.target.value)}
-                    />
-                </label>
-
-                <label className="label-do-todo">
-                    <span className="span-do-todo" >Descrição</span>
-                    <input className="input-do-todo"
-                    placeholder="Descrição"
-                    value={description}
-                    onChange={(event) => setDescription(event.target.value)}
-                    />
-                </label>
-                <div className="row">
+                    <form className="form-do-todo" onSubmit={id ? editProduto : newProduto}>
+                    <h1 className="h1-do-todo" >Cadastrar Produto</h1>
+                    <div className="inputs">
                     <label className="label-do-todo">
-                    <span className="span-do-todo" >Preço</span>
-                    <input className="input-do-todo"
-                        type="price"
-                        placeholder="Preço"
-                        value={price}
-                        onChange={(event) => setPrice(event.target.value)}
-                    />
+                        <span className="span-do-todo" >Nome do produto</span>
+                        <input className="input-do-todo"
+                        placeholder="Nome do produto"
+                        value={title}
+                        onChange={(event) => setTitle(event.target.value)}
+                        />
                     </label>
-                </div>
-                </div>
-                <div className="container-buttons-todo">
-                <button className="button-todo" type="submit">{!id ? "Salvar" : "Alterar"}</button>
-                <button className="button-todo" type="button" onClick={clearStates}>
-                    Limpar
-                </button>
-                </div>
-            </form>
 
-            <section className="section-dos-cards">
-                {produtos.map((produto) => (
-                    <Card className="Card-dos-produtos">
-                        <Card.Body className="card_body">
-                            <Card.Title className="card_title">{produto.title}</Card.Title>
-                            <Card.Text className="card_text">{produto.description}</Card.Text>
-                            <Card.Text className="card_text">{produto.price}</Card.Text>
-                            <Card.Text className="card_text">{produto.id}</Card.Text>
-                        </Card.Body>
-                        <FiEdit size={20} color="white" onClick={() => fillStates(produto)} />
-                        <FiTrash size={20} color="white" onClick={() => deleteProduto(produto.id)}/>
-                        <FiCheck size={20} color="white" onClick={() => checkProduto(produto.id, produto.status)}/>
-                    </Card>
-                ))}
-                {loading && <h3>Carregando dados...</h3>}
-            </section>
-
-            {/* <ul className="container-dos-todos">
-                {produtos.map((produto) => (
-                <li>
-                    <div>
-                    <h2>{produto.title}</h2>
-                    <p className="p-do-todo" >{produto.description}</p>
-                    <p className="p-do-todo" >{produto.price}</p>
-                    <p className="p-do-todo" >{produto.id}</p>
+                    <label className="label-do-todo">
+                        <span className="span-do-todo" >Descrição</span>
+                        <input className="input-do-todo"
+                        placeholder="Descrição"
+                        value={description}
+                        onChange={(event) => setDescription(event.target.value)}
+                        />
+                    </label>
+                    <div className="row">
+                        <label className="label-do-todo">
+                        <span className="span-do-todo" >Preço</span>
+                        <input className="input-do-todo"
+                            type="price"
+                            placeholder="Preço"
+                            value={price}
+                            onChange={(event) => setPrice(event.target.value)}
+                        />
+                        </label>
                     </div>
-                    <div className="container-buttons">
-                    <FiEdit size={20} color="#444" onClick={() => fillStates(produto)} />
-                    <FiTrash
-                        size={20}
-                        color="#444"
-                        onClick={() => deleteProduto(produto.id)}
-                    />
-                    <FiCheck
-                        size={20}
-                        color="#444"
-                        onClick={() => checkProduto(produto.id, produto.status)}
-                    />
                     </div>
-                </li>
-                ))}
-                {loading && <h3>Carregando dados...</h3>}
-            </ul> */}
+                    <div className="container-buttons-todo">
+                    <button className="button-todo" type="submit">{!id ? "Salvar" : "Alterar"}</button>
+                    <button className="button-todo" type="button" onClick={clearStates}>
+                        Limpar
+                    </button>
+                    </div>
+                </form>
 
+                <section className="section-dos-cards">
+                    {produtos.map((produto) => (
+                        <Card className="Card-dos-produtos">
+                            <Card.Body className="card_body">
+                                <Card.Title className="card_title">{produto.title}</Card.Title>
+                                <Card.Text className="card_text">{produto.description}</Card.Text>
+                                <Card.Text className="card_text">{produto.price}</Card.Text>
+                                <Card.Text className="card_text">{produto.id}</Card.Text>
+                            </Card.Body>
+                            <FiEdit size={20} color="white" onClick={() => fillStates(produto)} />
+                            <FiTrash size={20} color="white" onClick={() => deleteProduto(produto.id)}/>
+                            <FiCheck size={20} color="white" onClick={() => checkProduto(produto.id, produto.status)}/>
+                        </Card>
+                    ))}
+                    {loading && <h3>Carregando dados...</h3>}
+                </section>
             </div>
         </>
     )

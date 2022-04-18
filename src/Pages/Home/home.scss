@@ -1,8 +1,12 @@
-.home_container{
+@mixin baseFormat {
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
     background-color: black;
+}
+
+.home_container{
+    @include baseFormat;
+    align-items: center;
     flex-direction: column;
     color: white;
     padding-top: 120px;
@@ -35,7 +39,6 @@
     position: relative;
     display: flex;
     justify-content: center;
-    
 }
 
 .carousel_img{
@@ -43,8 +46,10 @@
     height: 400px;
     flex-direction: column;
     box-sizing: border-box;
-    width: 50% ;
+    width: 70% ;
 }
+
+
 
 // .carousel_text{
 //     display: flex;
@@ -52,8 +57,6 @@
 // }
 
 .container_card_home{
-    display: flex;
+    @include baseFormat;
     justify-content: space-around;
-    flex-wrap: wrap;
-    background-color: black;
 }

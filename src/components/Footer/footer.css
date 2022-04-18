@@ -1,12 +1,15 @@
 .footer_container_home {
-  background-color: rgba(150, 38, 38, 0.8);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  background-color: rgba(150, 38, 38, 0.8);
   position: absolute;
   width: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 h1 {

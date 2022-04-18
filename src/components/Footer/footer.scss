@@ -1,12 +1,16 @@
-.footer_container_home{
-    background-color: rgba(150,38,38,0.8);
+@mixin baseFormat{
     display: flex;
     flex-wrap: wrap;
+}
+
+.footer_container_home{
+    @include baseFormat;
+    background-color: rgba(150,38,38,0.8);
     position: absolute;
     width: 100%;
+    justify-content: center;
 }
 
 h1{
 color:white ;
-
 }

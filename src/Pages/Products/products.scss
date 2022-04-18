@@ -1,6 +1,10 @@
-.products_container{
+@mixin baseFormat {
     display: flex;
     flex-wrap: wrap;
+}
+
+.products_container{
+    @include baseFormat;
     background-color: black;
     flex-direction: column;
     color: white;

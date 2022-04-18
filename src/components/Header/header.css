@@ -1,21 +1,21 @@
 .header_container_home {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   background-color: rgba(150, 38, 38, 0.8);
   position: fixed;
   top: 0%;
   left: 0%;
   width: 100%;
   z-index: 100;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
 }
 
 .logo_header_home {
@@ -32,9 +32,9 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  list-style: none;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  list-style: none;
   margin-top: 15px;
   -ms-flex-line-pack: distribute;
       align-content: space-around;

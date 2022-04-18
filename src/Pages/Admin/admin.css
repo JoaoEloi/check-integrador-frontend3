@@ -1,8 +1,21 @@
+.admin_container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: black;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  color: white;
+  padding-top: 120px;
+}
+
 .title {
   text-align: center;
-  padding-bottom: 50px;
   padding-top: 10px;
-  color: black;
 }
 
 .h1-do-todo {
@@ -12,35 +25,25 @@
   text-align: center;
 }
 
-.app {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-  min-height: 100vh;
-}
-
 .form-do-todo {
-  background: #4b7bec;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
+  background-color: black;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  min-height: 100vh;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  min-height: 70vh;
   max-width: 400px;
   margin: auto;
   padding: 10px;
 }
 
-.inputs {
+.form-do-todo inputs {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -53,10 +56,15 @@
           flex: 1;
 }
 
-.row {
+.form-do-todo row {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+.form-do-todo span-do-todo {
+  margin-bottom: 5px;
+  color: #fff;
 }
 
 .row > label-do-todo {
@@ -91,11 +99,6 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-}
-
-.span-do-todo {
-  margin-bottom: 5px;
-  color: #fff;
 }
 
 .input-do-todo {
@@ -135,47 +138,37 @@
   color: #fff;
 }
 
-.container-dos-todos {
-  margin: auto;
-  list-style: none;
+.section-dos-cards {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  height: 100vh;
-  padding: 5px;
-  overflow-y: scroll;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
-.teste-do-todo {
-  background: #f0f0f0;
-  margin: 2px;
-  padding: 10px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+.Card-dos-produtos {
+  background: rgba(0, 0, 0, 0.65);
+  -webkit-box-shadow: 0 8px 32px 0 rgba(186, 145, 199, 0.37);
+          box-shadow: 0 8px 32px 0 rgba(186, 145, 199, 0.37);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: white;
+  font-size: 1rem;
+  width: 280px;
+  height: 480px;
+  margin: 20px;
+  padding: 20px 10px;
 }
 
-.container-buttons {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  gap: 5px;
+.Card-dos-produtos card_title {
+  padding-bottom: 20px;
 }
 
-.p-do-todo {
-  font-weight: 300;
+.Card-dos-produtos card_body {
+  text-align: center;
 }
 /*# sourceMappingURL=admin.css.map */

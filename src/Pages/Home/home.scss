@@ -4,6 +4,15 @@
     background-color: black;
 }
 
+@mixin baseCarousel {
+    border-width: .2rem .2rem 0;
+    border-radius: 8px 8px 0 0;
+    border-radius: 8px;
+    margin-right: 0;
+    margin-left: 0;
+    box-sizing: border-box;
+}
+
 .home_container{
     @include baseFormat;
     align-items: center;
@@ -23,15 +32,10 @@
 }
 
 .carousel_container{
+    @include baseCarousel;
     overflow: hidden;
-    border-width: .2rem .2rem 0;
-    border-radius: 8px 8px 0 0;
     position: relative;
     padding: 1rem;
-    box-sizing: border-box;
-    border-radius: 8px;
-    margin-right: 0;
-    margin-left: 0;
     width: 50%;
 }
 

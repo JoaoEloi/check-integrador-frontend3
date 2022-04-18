@@ -28,16 +28,16 @@
 }
 
 .carousel_container {
-  overflow: hidden;
   border-width: .2rem .2rem 0;
   border-radius: 8px 8px 0 0;
-  position: relative;
-  padding: 1rem;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
   border-radius: 8px;
   margin-right: 0;
   margin-left: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  overflow: hidden;
+  position: relative;
+  padding: 1rem;
   width: 50%;
 }
 

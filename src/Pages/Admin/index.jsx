@@ -150,7 +150,7 @@ export default function Administracao() {
                         <label className="label-do-todo">
                         <span className="span-do-todo" >Preço</span>
                         <input className="input-do-todo"
-                            type="price"
+                            type="number"
                             placeholder="Preço"
                             value={price}
                             onChange={(event) => setPrice(event.target.value)}
@@ -165,6 +165,8 @@ export default function Administracao() {
                     </button>
                     </div>
                 </form>
+
+                <Login />
 
                 <section className="section-dos-cards">
                     {produtos.map((produto) => (

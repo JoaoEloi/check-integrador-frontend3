@@ -1,5 +1,42 @@
+@mixin cardCustom {
+    width: 280px;
+    height: 480px;
+    color: white;
+    background: rgba( 0, 0, 0, 0.65 );
+    box-shadow: 0 8px 32px 0 rgba(186, 145, 199, 0.37);
+    backdrop-filter: blur( 20px );
+    -webkit-backdrop-filter: blur( 20px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+.container_cards{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.card_home_item{
+    @include cardCustom;
+    font-size: 1rem;
+    margin: 20px;
+    padding: 20px 10px;
+
+    card_title{
+        padding-bottom: 20px;
+        }
+
+        card_body{
+            text-align: center;
+        }    
+}
+
 .title{
     text-align: center;
     padding-bottom: 50px;
     padding-top: 10px;
+}
+
+.conteiner_aboutUs{
+    background-color: black;
 }

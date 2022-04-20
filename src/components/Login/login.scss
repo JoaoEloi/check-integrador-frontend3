@@ -44,6 +44,28 @@
     border-radius: 5px;
 }
 
+.info_erro_inputs{
+    color:red;
+}
+
+.container_button{
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.button_info{
+    height: 50px;
+    width: 185px;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    background: transparent;
+    border: none;
+    border-radius: 2px;
+    margin-bottom: 100px;
+}
+
 .button-login {
     height: 50px;
     width: 185px;

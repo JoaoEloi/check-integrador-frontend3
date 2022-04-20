@@ -5,6 +5,7 @@ import { FiCheck, FiEdit, FiTrash } from "react-icons/fi";
 import { Card } from 'react-bootstrap';
 import Login from '../../components/Login';
 import Swal from 'sweetalert2'
+import ImgTeste from '../../assets/thumbnail_destaque_smash-burger-le-pingue.png'
 
 
 export default function Administracao() {
@@ -84,7 +85,7 @@ export default function Administracao() {
         });
         Toast.fire({
             icon: 'success',
-            title: 'Signed in successfully'
+            title: 'Produto excluído com sucesso'
         })
         getProdutos();
     } catch (error) {
@@ -144,11 +145,37 @@ export default function Administracao() {
         <>
             <div className="admin_container">
 
-                    <div className="title">
-                        <h1>Admin</h1>
-                    </div>
+                        <div className="title">
+                            <h1>Admin</h1>
+                        </div>
 
-                    {/* <form className="form-do-todo" onSubmit={id ? editProduto : newProduto}>
+                <Modal className="modal_button_adm"
+                    setProdutos={setProdutos}
+                    editProdutos={editProduto}/>
+
+                    <section className="section-dos-cards">
+                        {produtos.map((produto) => (
+                            <Card className="Card-dos-produtos">
+                                <Card.Img className="img_card" alt="Foto do Card" src={ ImgTeste }/>
+                                <Card.Body className="card_body">
+                                    <Card.Title className="card_title">{produto.title}</Card.Title>
+                                    <Card.Text className="card_text">{produto.description}</Card.Text>
+                                    <Card.Text className="card_text">{produto.price}</Card.Text>
+                                    <Card.Text className="card_text">{produto.id}</Card.Text>
+                                </Card.Body>
+                                <FiEdit size={30} color="white" onClick={() => fillStates(produto)} />
+                                <FiTrash size={30} color="white" onClick={() => deleteProduto(produto.id)}/>
+                                <FiCheck size={30} color="white" onClick={() => checkProduto(produto.id, produto.status)}/>
+                            </Card>
+                        ))}
+                        {loading && <h3>Carregando dados...</h3>}
+                    </section>
+            </div>
+        </>
+)
+}
+
+{/* <form className="form-do-todo" onSubmit={id ? editProduto : newProduto}>
                     <h1 className="h1-do-todo" >Cadastrar Produto</h1>
                     <div className="inputs">
                     <label className="label-do-todo">
@@ -188,29 +215,6 @@ export default function Administracao() {
                     </div>
                 </form> */}
 
-                <Login />
+                
 
-                <Modal className="modal_button_adm"
-                setProdutos={setProdutos}
-                editProdutos={editProduto}/>
-
-                <section className="section-dos-cards">
-                    {produtos.map((produto) => (
-                        <Card className="Card-dos-produtos">
-                            <Card.Body className="card_body">
-                                <Card.Title className="card_title">{produto.title}</Card.Title>
-                                <Card.Text className="card_text">{produto.description}</Card.Text>
-                                <Card.Text className="card_text">{produto.price}</Card.Text>
-                                <Card.Text className="card_text">{produto.id}</Card.Text>
-                            </Card.Body>
-                            <FiEdit size={30} color="white" onClick={() => fillStates(produto)} />
-                            <FiTrash size={30} color="white" onClick={() => deleteProduto(produto.id)}/>
-                            <FiCheck size={30} color="white" onClick={() => checkProduto(produto.id, produto.status)}/>
-                        </Card>
-                    ))}
-                    {loading && <h3>Carregando dados...</h3>}
-                </section>
-            </div>
-        </>
-    )
-}
+                

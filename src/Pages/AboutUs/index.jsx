@@ -1,10 +1,11 @@
 import './aboutus.scss'
-import Button from 'react-bootstrap/Button'
+
 import { Card } from 'react-bootstrap';
 import { Link } from '@mui/material';
 import DataPerfil from '../../data/dataPerfil';
 import { GoMarkGithub } from "react-icons/go";
 import { ImLinkedin } from "react-icons/im";
+import Login from '../../components/Login';
 
 
 export default function AboutUs() {    
@@ -32,6 +33,8 @@ export default function AboutUs() {
             </Card>         
             ))}
             </section>
+
+            <Login />
         </div>
     )
 }

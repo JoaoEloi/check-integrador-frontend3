@@ -7,18 +7,18 @@ const DataPerfil = [
         link1:'https://github.com/MarBrito',
         button2: 'Likedin',
         link2:'https://www.linkedin.com/in/marlusibrito/',
-        image: 'http://www.lepingue.com.br/admin/uploads/images/galeria/smash-salada_6afef15b97b53b06a934b4f5fdd0bfc0__800x600__0x0.jpg',
+        image: 'https://cdn.discordapp.com/avatars/257647281526800384/87a04e199b08025f903a8b13beb682eb.webp',
 
     },
     {
         id: 2,
         title: 'Anderson Ribeiro',
-        description: 'Pão e Maionese da Casa, Hambúrguer de Fraldinha, Queijo Muçarela, Molho de Mostarda e Rúcula.',
+        description: '26 anos, estudante de Ciência da Computação, e aspirante a Desenvolvedor FullStack Junior.',
         button1: 'GitHub',
-        link1:'https://github.com/MarBrito',
+        link1:'https://github.com/andersonsilvaribeiro',
         button2: 'Likedin',
-        link2:'https://www.linkedin.com/in/marlusibrito/',
-        image: 'http://www.lepingue.com.br/admin/uploads/images/galeria/fraldinha-na-mostarda_1a03f2943ef896758c14801580a5943d__800x600__0x0.jpg',
+        link2:'',
+        image: 'https://avatars.githubusercontent.com/u/85124086?v=4',
 
     },
     {
@@ -29,7 +29,7 @@ const DataPerfil = [
         link1:'https://www.github.com/Dougsss',
         button2: 'Likedin',
         link2:'https://linkedin.com/in/doug-araujo',
-        image: 'https://media-exp1.licdn.com/dms/image/D4E35AQE_k5dcGwamTg/profile-framedphoto-shrink_800_800/0/1642994965775?e=2147483647&v=beta&t=vzlw-EJreaX6KBN9bZPXYiKIblK02D8ZLbxYh-hW2D0',
+        image: 'https://avatars.githubusercontent.com/u/86627627?v=4',
     },
     {
         id: 4,
@@ -45,18 +45,18 @@ const DataPerfil = [
     {
         id: 5,
         title: 'Lelia Salles',
-        description: 'teste teste teste teste',
+        description: 'Musicista e empreendedora. Estudante na Digital House',
         button1: 'GitHub',
         link1:'https://www.github.com/leliasalles',
         button2: 'Likedin',
         link2:'https://www.linkedin.com/in/leliasalles',
-        image: 'http://saboritaliana.com.br/imgs/manutencao.jpg',
+        image: 'https://avatars.githubusercontent.com/u/89154346?v=4',
 
     },
     {
         id: 6,
         title: 'Mar Brito',
-        description: 'teste teste teste teste',
+        description: 'Estudante "Full Stack Developer" na Digital House e "A.D.S" Universidade Cruzeiro do Sul.',
         button1: 'GitHub',
         link1:'https://github.com/MarBrito',
         button2: 'Likedin',

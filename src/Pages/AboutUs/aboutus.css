@@ -1,6 +1,75 @@
+.conteiner_aboutUs {
+  background-color: black;
+  padding-top: 120px;
+}
+
+.container_cards_aboutUs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.card_aboutUs_item {
+  width: 280px;
+  height: 510px;
+  color: white;
+  background: rgba(0, 0, 0, 0.65);
+  -webkit-box-shadow: 0 8px 32px 0 rgba(186, 145, 199, 0.37);
+          box-shadow: 0 8px 32px 0 rgba(186, 145, 199, 0.37);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  font-size: 1rem;
+  margin: 20px;
+  padding: 20px 10px;
+}
+
+.card_aboutUs_item card_title {
+  padding-bottom: 20px;
+}
+
+.card_aboutUs_item card_body {
+  text-align: center;
+}
+
+.img_card {
+  width: 230px;
+  height: 240px;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
 .title {
   text-align: center;
   padding-bottom: 50px;
   padding-top: 10px;
+}
+
+.button_item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 20px;
+  margin-left: 90px;
+}
+
+.button_link {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  margin: 30px;
 }
 /*# sourceMappingURL=aboutus.css.map */

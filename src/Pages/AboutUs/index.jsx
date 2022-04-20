@@ -3,6 +3,8 @@ import Button from 'react-bootstrap/Button'
 import { Card } from 'react-bootstrap';
 import { Link } from '@mui/material';
 import DataPerfil from '../../data/dataPerfil';
+import { GoMarkGithub } from "react-icons/go";
+import { ImLinkedin } from "react-icons/im";
 
 
 export default function AboutUs() {    
@@ -20,11 +22,11 @@ export default function AboutUs() {
             <Card.Body className="card_body">
                 <Card.Title className='card_title'>{card.title}</Card.Title>
                 <Card.Text>{card.description}</Card.Text>
-                <Link href={card.link1}>
-                    <Button className="button_item">{card.button1}</Button>
+                <Link href={card.link1} classname="button_link">
+                <GoMarkGithub size={30} color="white" className="button_item">{card.button1}</GoMarkGithub>
                 </Link>
                 <Link href={card.link2}>
-                    <Button className="button_item">{card.button2}</Button>
+                    <ImLinkedin size={30}   color="white" className="button_item">{card.button2}</ImLinkedin>
                 </Link>
             </Card.Body>
             </Card>         
@@ -33,3 +35,5 @@ export default function AboutUs() {
         </div>
     )
 }
+
+

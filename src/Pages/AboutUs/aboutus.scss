@@ -42,3 +42,16 @@
     padding-top: 10px;
 }
 
+.button_item{
+    display: flex;
+    align-self: flex-end;
+    justify-content: space-between;
+    margin: 20px ;
+    margin-left: 90px;
+}
+
+.button_link{
+    display: flex;
+    align-self: flex-end;
+    margin: 30px;
+}

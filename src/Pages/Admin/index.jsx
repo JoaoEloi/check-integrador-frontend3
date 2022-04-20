@@ -1,9 +1,8 @@
 import './admin.scss'
 import Modal from '../../components/Modal'
 import { useEffect, useState } from "react";
-import { FiCheck, FiEdit, FiTrash } from "react-icons/fi";
+import { FiEdit, FiTrash } from "react-icons/fi";
 import { Card } from 'react-bootstrap';
-import Login from '../../components/Login';
 import Swal from 'sweetalert2'
 import ImgTeste from '../../assets/thumbnail_destaque_smash-burger-le-pingue.png'
 
@@ -78,6 +77,35 @@ export default function Administracao() {
     }
     }
 
+    function fillStates(produto) {
+        setTitle(produto.title);
+        setPrice(produto.price);
+        setDescription(produto.description);
+        setId(produto.id);
+        handleShow();
+        }
+
+        async function editProduto(event) {
+            event.preventDefault();
+            try {
+                const body = {
+                title,
+                price,
+                description,
+                };
+                await fetch("http://localhost:3000/api/produto/" + id, {
+                method: "PATCH",
+                body: JSON.stringify(body),
+                });
+                alert("Produto alterado");
+                clearStates();
+                getProdutos();
+            } catch (error) {
+                alert("Erro ao alterar");
+            }
+            }
+
+
     async function deleteProduto(id) {
     try {
         await fetch("http://localhost:3000/api/produto/" + id, {
@@ -93,12 +121,6 @@ export default function Administracao() {
     }
     }
 
-    function fillStates(produto) {
-    setTitle(produto.title);
-    setPrice(produto.price);
-    setDescription(produto.description);
-    setId(produto.id);
-    }
 
     function clearStates() {
     setId("");
@@ -107,39 +129,6 @@ export default function Administracao() {
     setDescription("");
     }
 
-    async function editProduto(event) {
-    event.preventDefault();
-    try {
-        const body = {
-        title,
-        price,
-        description,
-        };
-        await fetch("http://localhost:3000/api/produto/" + id, {
-        method: "PATCH",
-        body: JSON.stringify(body),
-        });
-        alert("Produto alterado");
-        clearStates();
-        getProdutos();
-    } catch (error) {
-        alert("Erro ao alterar");
-    }
-    }
-
-    async function checkProduto(id, status) {
-    const body = {
-        status: !status,
-    };
-
-    try {
-        await fetch("http://localhost:3000/api/produto/" + id, {
-        method: "PATCH",
-        body: JSON.stringify(body),
-        });
-        getProdutos();
-    } catch (error) {}
-    }
 
     return (
         <>
@@ -149,23 +138,27 @@ export default function Administracao() {
                             <h1>Admin</h1>
                         </div>
 
-                <Modal className="modal_button_adm"
+                <Modal 
+                handleClose={handleClose}
+                handleShow={handleShow}
+                show={show}
+                className="modal_button_adm"
                     setProdutos={setProdutos}
-                    editProdutos={editProduto}/>
+                    editProdutos={editProduto}
+                    id={id} title={title} price={price} description={description}/>
 
                     <section className="section-dos-cards">
                         {produtos.map((produto) => (
                             <Card className="Card-dos-produtos">
-                                <Card.Img className="img_card" alt="Foto do Card" src={ ImgTeste }/>
+                                
                                 <Card.Body className="card_body">
                                     <Card.Title className="card_title">{produto.title}</Card.Title>
                                     <Card.Text className="card_text">{produto.description}</Card.Text>
                                     <Card.Text className="card_text">{produto.price}</Card.Text>
                                     <Card.Text className="card_text">{produto.id}</Card.Text>
                                 </Card.Body>
-                                <FiEdit size={30} color="white" onClick={() => fillStates(produto)} />
-                                <FiTrash size={30} color="white" onClick={() => deleteProduto(produto.id)}/>
-                                <FiCheck size={30} color="white" onClick={() => checkProduto(produto.id, produto.status)}/>
+                                <FiEdit size={40} color="white" onClick={() => fillStates(produto)} />
+                                <FiTrash size={40} color="white" onClick={() => deleteProduto(produto.id)}/>
                             </Card>
                         ))}
                         {loading && <h3>Carregando dados...</h3>}
@@ -175,45 +168,8 @@ export default function Administracao() {
 )
 }
 
-{/* <form className="form-do-todo" onSubmit={id ? editProduto : newProduto}>
-                    <h1 className="h1-do-todo" >Cadastrar Produto</h1>
-                    <div className="inputs">
-                    <label className="label-do-todo">
-                        <span className="span-do-todo" >Nome do produto</span>
-                        <input className="input-do-todo"
-                        placeholder="Nome do produto"
-                        value={title}
-                        onChange={(event) => setTitle(event.target.value)}
-                        />
-                    </label>
+{/* <Card.Img className="img_card" alt="Foto do Card" src={ ImgTeste }/> */}
 
-                    <label className="label-do-todo">
-                        <span className="span-do-todo" >Descrição</span>
-                        <input className="input-do-todo"
-                        placeholder="Descrição"
-                        value={description}
-                        onChange={(event) => setDescription(event.target.value)}
-                        />
-                    </label>
-                    <div className="row">
-                        <label className="label-do-todo">
-                        <span className="span-do-todo" >Preço</span>
-                        <input className="input-do-todo"
-                            type="number"
-                            placeholder="Preço"
-                            value={price}
-                            onChange={(event) => setPrice(event.target.value)}
-                        />
-                        </label>
-                    </div>
-                    </div>
-                    <div className="container-buttons-todo">
-                    <button className="button-todo" type="submit">{!id ? "Salvar" : "Alterar"}</button>
-                    <button className="button-todo" type="button" onClick={clearStates}>
-                        Limpar
-                    </button>
-                    </div>
-                </form> */}
 
                 
 

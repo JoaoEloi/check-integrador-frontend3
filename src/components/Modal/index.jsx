@@ -12,11 +12,8 @@ import Swal from 'sweetalert2'
 
 export default function Example(props) {
 
-    const [show, setShow] = useState(false);
 
-    const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
-
+    
     const [selectedFile, setSelectedFile] = useState(null);
 
     const [loading, setLoading] = useState(false);
@@ -27,6 +24,12 @@ export default function Example(props) {
     useEffect(() => {
     getProdutos();
     });
+
+    useEffect(() => {
+        if(props.id) {
+            fillStates()
+        }
+    },[])
 
     const Toast = Swal.mixin({
         toast: true,
@@ -81,7 +84,7 @@ export default function Example(props) {
         })
         clearStates();
         getProdutos();
-        handleClose();
+        props.handleClose();
         } catch (error) {
         alert("Erro ao cadastrar Produto");
         }
@@ -89,11 +92,10 @@ export default function Example(props) {
     }
 
 
-    function fillStates(produto) {
-    setTitle(produto.title);
-    setPrice(produto.price);
-    setDescription(produto.description);
-    setId(produto.id);
+    function fillStates() {
+    setTitle(props.title);
+    setPrice(props.price);
+    setDescription(props.description);
     }
 
     function clearStates() {
@@ -123,29 +125,16 @@ export default function Example(props) {
     }
     }
 
-    async function checkProduto(id, status) {
-    const body = {
-        status: !status,
-    };
-
-    try {
-        await fetch("http://localhost:3000/api/produto/" + id, {
-        method: "PATCH",
-        body: JSON.stringify(body),
-        });
-        getProdutos();
-    } catch (error) {}
-    }
 
     return (
         
         <>
             <div classname="modal_button_adm">
-            <Button variant="light" onClick={handleShow}>
+            <Button variant="light" onClick={props.handleShow}>
                 Adicionar Produto
             </Button>
 
-            <Modal onSubmit={id ? editProduto : newProduto} show={show} onHide={handleClose}>
+            <Modal onSubmit={id ? editProduto : newProduto} show={props.show} onHide={props.handleClose}>
                 <Modal.Header closeButton>
                 <Modal.Title>Adicionando um novo produto</Modal.Title>
             </Modal.Header>
@@ -202,7 +191,7 @@ export default function Example(props) {
             </Modal.Body>
 
             <Modal.Footer>
-                <Button variant="danger" onClick={handleClose}>
+                <Button variant="danger" onClick={props.handleClose}>
                 Cancelar
                 </Button>
 

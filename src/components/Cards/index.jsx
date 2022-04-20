@@ -7,6 +7,7 @@ export default function Cards({ item }) {
     const addToCart = () => {
         console.log("Adicionado!")
     }
+    
     return (
 
 

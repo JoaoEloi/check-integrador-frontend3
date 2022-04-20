@@ -6,17 +6,17 @@ import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
 import InputGroup from 'react-bootstrap/InputGroup'
 import FloatingLabel from 'react-bootstrap/FloatingLabel'
+import Swal from 'sweetalert2'
 
 
 
-export default function Example() {
+export default function Example(props) {
 
     const [show, setShow] = useState(false);
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
-    const [produtos, setProdutos] = useState([]);
     const [loading, setLoading] = useState(false);
     const [title, setTitle] = useState("");
     const [description, setDescription] = useState("");
@@ -24,16 +24,16 @@ export default function Example() {
     const [id, setId] = useState("");
     useEffect(() => {
     getProdutos();
-    }, []);
+    });
 
     async function getProdutos() {
     setLoading(true);
     try {
-        const data = await fetch("http://localhost:3000/api/produtos");
+        const data = await fetch("http://localhost:3000/api/produto");
 
         const { produtos } = await data.json();
 
-        setProdutos(produtos);
+        props.setProdutos(produtos);
     } catch (error) {
         alert("Houve um erro ao comunicar com o servidor");
     }
@@ -44,7 +44,11 @@ export default function Example() {
     event.preventDefault();
 
     if (!title || !description || !price) {
-        alert("Preencha todos os campos");
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Preencha todos os campos',
+        })
     } else {
         const body = {
         title,
@@ -60,23 +64,13 @@ export default function Example() {
         alert("Cadastrado com sucesso");
         clearStates();
         getProdutos();
+        handleClose();
         } catch (error) {
         alert("Erro ao cadastrar Produto");
         }
     }
     }
 
-    async function deleteProduto(id) {
-    try {
-        await fetch("http://localhost:3000/api/produto/" + id, {
-        method: "DELETE",
-        });
-        alert("Produto Deletado com sucesso");
-        getProdutos();
-    } catch (error) {
-        alert("Erro ao deletar produto");
-    }
-    }
 
     function fillStates(produto) {
     setTitle(produto.title);
@@ -129,7 +123,8 @@ export default function Example() {
     return (
         
         <>
-            <Button variant="dark" onClick={handleShow}>
+            <div classname="modal_button_adm">
+            <Button variant="light" onClick={handleShow}>
                 Adicionar Produto
             </Button>
 
@@ -193,11 +188,15 @@ export default function Example() {
                 <Button variant="danger" onClick={handleClose}>
                 Cancelar
                 </Button>
-                <Button variant="success" onClick={handleClose}>
+
+                <Button variant="warning" onClick={clearStates}>Limpar</Button>
+
+                <Button variant="success" onClick={newProduto}>
                 {!id ? "Cadastrar" : "Alterar"}
                 </Button>
             </Modal.Footer>
             </Modal>
+            </div> 
         </>
     );
 }

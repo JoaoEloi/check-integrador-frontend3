@@ -7,6 +7,10 @@ import Login from '../../components/Login';
 
 export default function Administracao() {
 
+    const [show, setShow] = useState(false);
+
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
 
     const [produtos, setProdutos] = useState([]);
     const [loading, setLoading] = useState(false);
@@ -126,7 +130,7 @@ export default function Administracao() {
                         <h1>Admin</h1>
                     </div>
 
-                    <form className="form-do-todo" onSubmit={id ? editProduto : newProduto}>
+                    {/* <form className="form-do-todo" onSubmit={id ? editProduto : newProduto}>
                     <h1 className="h1-do-todo" >Cadastrar Produto</h1>
                     <div className="inputs">
                     <label className="label-do-todo">
@@ -164,9 +168,13 @@ export default function Administracao() {
                         Limpar
                     </button>
                     </div>
-                </form>
+                </form> */}
 
                 <Login />
+
+                <Modal className="modal_button_adm"
+                setProdutos={setProdutos}
+                editProdutos={editProduto}/>
 
                 <section className="section-dos-cards">
                     {produtos.map((produto) => (
@@ -177,9 +185,9 @@ export default function Administracao() {
                                 <Card.Text className="card_text">{produto.price}</Card.Text>
                                 <Card.Text className="card_text">{produto.id}</Card.Text>
                             </Card.Body>
-                            <FiEdit size={20} color="white" onClick={() => fillStates(produto)} />
-                            <FiTrash size={20} color="white" onClick={() => deleteProduto(produto.id)}/>
-                            <FiCheck size={20} color="white" onClick={() => checkProduto(produto.id, produto.status)}/>
+                            <FiEdit size={30} color="white" onClick={() => fillStates(produto)} />
+                            <FiTrash size={30} color="white" onClick={() => deleteProduto(produto.id)}/>
+                            <FiCheck size={30} color="white" onClick={() => checkProduto(produto.id, produto.status)}/>
                         </Card>
                     ))}
                     {loading && <h3>Carregando dados...</h3>}

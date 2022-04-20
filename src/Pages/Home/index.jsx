@@ -5,6 +5,7 @@ import card_image3 from '../../assets/thumbnail_destaque_festival-mini-hamburgue
 import Cards from '../../components/Cards'
 import { CardsInfo } from '../../data'
 import api from '../../Service/api'
+import axios from 'axios'
 
 
 import Carousel from 'react-bootstrap/Carousel'
@@ -12,32 +13,30 @@ import { useEffect, useState } from 'react'
 
 export default function Home() {
 
-    const [usuario, setUsuario] = useState();
+    const [usuarios, setUsuarios] = useState([]);
+    const [pratos, setPratos] = useState([]);
+    const [restaurantes, setRestaurantes] = useState([]);
 
-    useEffect(() => {
-        api
-            .get("/usuarios/1")            
-            .then((response) => setUsuario(response.data))
-            .catch((err) => {
-                console.error("Ops! ocorreu um erro" + err);
-            });
-    }, [])
+    useEffect(() => {getData()}, []);
+
+    async function getData(){
+        await axios.get("http://54.152.13.86:8080/restaurantes").then((response) =>{
+            setRestaurantes(response.data);
+        })
+
+        await axios.get("http://54.152.13.86:8080/pratos").then((response) =>{
+            setPratos(response.data);
+        })
+    }
 
     return (
         <home id="home" className="home_container">
-
-            <div>
-                <p>Usuario: {usuario?.nome}</p>
-                <p>Biografia: {usuario?.email}</p>
-            </div>
-
             <div className="title">
                 <h1>Home</h1>
             </div>
             <section className="carousel_container">
                 
                 <Carousel >
-
                     <Carousel.Item interval={2000} >
                         <div className="carousel_item">
                             <img
@@ -87,15 +86,11 @@ export default function Home() {
 
             <div id="body" className="container_card_home">
                 {
-                    CardsInfo.map((item) => (
-                        <Cards item={item} />
+                    pratos.map((pratos) => (
+                        <Cards item={pratos} />
                     ))
                 }
             </div>
-
-
-
-
         </home>
     )
 }

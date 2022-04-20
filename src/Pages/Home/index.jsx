@@ -4,13 +4,32 @@ import card_image2 from '../../assets/thumbnail_destaque_combo-kids.png'
 import card_image3 from '../../assets/thumbnail_destaque_festival-mini-hamburguer.png'
 import Cards from '../../components/Cards'
 import { CardsInfo } from '../../data'
+import api from '../../Service/api'
 
 
 import Carousel from 'react-bootstrap/Carousel'
+import { useEffect, useState } from 'react'
 
 export default function Home() {
+
+    const [usuario, setUsuario] = useState();
+
+    useEffect(() => {
+        api
+            .get("/usuarios/1")            
+            .then((response) => setUsuario(response.data))
+            .catch((err) => {
+                console.error("Ops! ocorreu um erro" + err);
+            });
+    }, [])
+
     return (
         <home id="home" className="home_container">
+
+            <div>
+                <p>Usuario: {usuario?.nome}</p>
+                <p>Biografia: {usuario?.email}</p>
+            </div>
 
             <div className="title">
                 <h1>Home</h1>

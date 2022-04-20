@@ -5,7 +5,7 @@ import App from './App';
 
 import { Server, Model } from "miragejs";
 
-
+/*
 new Server({
   models: {
     produtos: Model,
@@ -51,7 +51,7 @@ new Server({
       return schema.produtos.find(id).destroy();
     });
   },
-});
+});*/
 
 
 

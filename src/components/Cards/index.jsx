@@ -9,8 +9,6 @@ export default function Cards({ item }) {
     }
     
     return (
-
-
         <Card className="card_home_item">
             <Card.Img src={item.image} className="img_card" alt="Foto do Card" />
             <Card.Body className="card_body">

@@ -5,7 +5,7 @@ import { Link } from '@mui/material';
 import DataPerfil from '../../data/dataPerfil';
 import { GoMarkGithub } from "react-icons/go";
 import { ImLinkedin } from "react-icons/im";
-import Login from '../../components/Login';
+import Login from '../Login';
 
 
 export default function AboutUs() {    
@@ -34,7 +34,6 @@ export default function AboutUs() {
             ))}
             </section>
 
-            <Login />
         </div>
     )
 }

@@ -4,6 +4,8 @@ import { useEffect, useState } from "react";
 import { FiCheck, FiEdit, FiTrash } from "react-icons/fi";
 import { Card } from 'react-bootstrap';
 import Login from '../../components/Login';
+import Swal from 'sweetalert2'
+
 
 export default function Administracao() {
 
@@ -21,6 +23,19 @@ export default function Administracao() {
     useEffect(() => {
     getProdutos();
     }, []);
+
+    const Toast = Swal.mixin({
+        toast: true,
+        position: 'top-end',
+        showConfirmButton: false,
+        timer: 3000,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+        toast.addEventListener('mouseenter', Swal.stopTimer)
+        toast.addEventListener('mouseleave', Swal.resumeTimer)
+        }
+    })
+    
 
     async function getProdutos() {
     setLoading(true);
@@ -67,7 +82,10 @@ export default function Administracao() {
         await fetch("http://localhost:3000/api/produto/" + id, {
         method: "DELETE",
         });
-        alert("Produto Deletado com sucesso");
+        Toast.fire({
+            icon: 'success',
+            title: 'Signed in successfully'
+        })
         getProdutos();
     } catch (error) {
         alert("Erro ao deletar produto");

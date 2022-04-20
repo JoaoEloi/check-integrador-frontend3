@@ -1,17 +1,20 @@
-// import './aboutus.scss'
-// import Button from 'react-bootstrap/Button'
-// import { Card } from 'react-bootstrap';
-// import { Link } from '@mui/material';
+import './aboutus.scss'
+import Button from 'react-bootstrap/Button'
+import { Card } from 'react-bootstrap';
+import { Link } from '@mui/material';
 
 
-// export default function AboutUs({item}) {
-//     return (
+export default function AboutUs({item}) {
+    return (
         
-//         <div className="conteiner_aboutUs">
-//         <div className="title">
-//             <h1>Sobre nós</h1>
-//             <h2>About Us teste da mar</h2>
-//         {/* </div>
+        <div className="conteiner_aboutUs">
+            <div className="title">
+                <h1>Sobre nós</h1>
+                <h2>About Us teste da mar</h2>
+            </div>
+
+
+            {/* </div>
 //         <Card className="card_home_item">
 //         <Card.Img className="img_card" alt="Foto do Card" />
 //         <Card.Body className="card_body">
@@ -25,7 +28,9 @@
 //             </Link>
 //         </Card.Body>
 //         </Card> */}
-//         </div>
+
+        </div>
         
-//     )
-// }
+    )
+}
+

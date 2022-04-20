@@ -10,6 +10,11 @@
     border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
 
+.conteiner_aboutUs{
+    background-color: black;
+    padding-top: 120px;
+}
+
 .container_cards{
     display: flex;
     justify-content: space-around;
@@ -37,6 +42,3 @@
     padding-top: 10px;
 }
 
-.conteiner_aboutUs{
-    background-color: black;
-}

@@ -17,6 +17,8 @@ export default function Example(props) {
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
+    const [selectedFile, setSelectedFile] = useState(null);
+
     const [loading, setLoading] = useState(false);
     const [title, setTitle] = useState("");
     const [description, setDescription] = useState("");
@@ -25,6 +27,18 @@ export default function Example(props) {
     useEffect(() => {
     getProdutos();
     });
+
+    const Toast = Swal.mixin({
+        toast: true,
+        position: 'top-end',
+        showConfirmButton: false,
+        timer: 3000,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+        toast.addEventListener('mouseenter', Swal.stopTimer)
+        toast.addEventListener('mouseleave', Swal.resumeTimer)
+        }
+    })
 
     async function getProdutos() {
     setLoading(true);
@@ -61,7 +75,10 @@ export default function Example(props) {
             method: "POST",
             body: JSON.stringify(body),
         });
-        alert("Cadastrado com sucesso");
+        Toast.fire({
+            icon: 'success',
+            title: 'Produto cadastrado com sucesso'
+        })
         clearStates();
         getProdutos();
         handleClose();

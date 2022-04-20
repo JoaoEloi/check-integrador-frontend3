@@ -35,6 +35,7 @@ export default function Home() {
                 <h1>Home</h1>
             </div>
             <section className="carousel_container">
+                
                 <Carousel >
 
                     <Carousel.Item interval={2000} >

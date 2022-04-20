@@ -1,6 +1,6 @@
 @mixin cardCustom {
     width: 280px;
-    height: 480px;
+    height: 510px;
     color: white;
     background: rgba( 0, 0, 0, 0.65 );
     box-shadow: 0 8px 32px 0 rgba(186, 145, 199, 0.37);
@@ -34,6 +34,12 @@
         card_body{
             text-align: center;
         }    
+}
+
+.img_card{
+    width: 230px;
+    height: 240px;
+    align-self: center;
 }
 
 .title{

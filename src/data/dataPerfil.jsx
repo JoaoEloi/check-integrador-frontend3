@@ -29,7 +29,7 @@ const DataPerfil = [
         link1:'https://www.github.com/Dougsss',
         button2: 'Likedin',
         link2:'https://linkedin.com/in/doug-araujo',
-        image: 'http://www.lepingue.com.br/admin/uploads/images/galeria/agua-com-e-sem-gas_19b3d1073e4ebc83e6392331f4d11565__800x600__0x0.jpg',
+        image: 'https://media-exp1.licdn.com/dms/image/D4E35AQE_k5dcGwamTg/profile-framedphoto-shrink_800_800/0/1642994965775?e=2147483647&v=beta&t=vzlw-EJreaX6KBN9bZPXYiKIblK02D8ZLbxYh-hW2D0',
     },
     {
         id: 4,
@@ -39,7 +39,7 @@ const DataPerfil = [
         link1:'https://github.com/JoaoEloi',
         button2: 'Likedin',
         link2:'https://www.linkedin.com/in/jo%C3%A3o-eduardo-da-concei%C3%A7%C3%A3o-eloi-533a19187/',
-        image: 'http://www.lepingue.com.br/admin/uploads/images/galeria/aneis-de-cebola_b0f12dba730bce1241701293db481579__800x600__0x0.jpg',
+        image: 'https://media-exp1.licdn.com/dms/image/C5603AQHgHKhM3jnguQ/profile-displayphoto-shrink_800_800/0/1649082393445?e=1655942400&v=beta&t=A3dgoQly0wheggappIbcaZ1kX95uoNf35PwZXGsf7vc',
 
     },
     {
@@ -61,7 +61,7 @@ const DataPerfil = [
         link1:'https://github.com/MarBrito',
         button2: 'Likedin',
         link2:'https://www.linkedin.com/in/marlusibrito/',
-        image: 'http://saboritaliana.com.br/imgs/manutencao.jpg',
+        image: 'https://media-exp1.licdn.com/dms/image/C4D03AQE32-nDLL9p5A/profile-displayphoto-shrink_800_800/0/1612898351240?e=1655942400&v=beta&t=XUBpb1oC-SUHOXxd_0PUkuCeqCZr2-abA_qS9BERfbg',
 
     },
     {

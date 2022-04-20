@@ -1,4 +1,4 @@
-export const DataPerfil = [
+const DataPerfil = [
     {
         id: 1,
         title: 'Anderson Bueno',
@@ -77,3 +77,5 @@ export const DataPerfil = [
     },
     
 ]
+
+export default DataPerfil;

@@ -1,32 +1,20 @@
 import './login.scss'
 import { Formik, Form, Field } from 'formik';
-import * as Yup from 'yup';
 import Button from 'react-bootstrap/Button'
 import Swal from 'sweetalert2'
-import { BrowserRouter, Routes, Route, useLocation, Navigate, Link } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation, Navigate, Link, useNavigate } from "react-router-dom";
 import Admin from '../Admin'
 
 
 export default function Login() {
 
-    // const SignupSchema = Yup.object().shape({
-    //     userName: Yup.string()
-    //     .required('Insira seu nome de usuario'),
-
-    //     email: Yup.string()
-    //     .email('Email inválido')
-    //     .required('Insira seu email'),
-
-    //     password: Yup.string()
-    //     .required('Senha inválida'),
-    // });
-
-
 
     const location = useLocation();
 
+    const navigate = useNavigate()
+
     function onSubmit(values, actions) {
-        // <Navigate To="/" replace state={{from: location}} />
+        navigate("/administ")
     }
 
     

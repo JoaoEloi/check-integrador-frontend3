@@ -29,7 +29,7 @@ export default function Example(props) {
         if(props.id) {
             fillStates()
         }
-    },[])
+    }, [])
 
     const Toast = Swal.mixin({
         toast: true,

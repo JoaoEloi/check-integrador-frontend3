@@ -1,11 +1,9 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './globalstyle.scss'
-import App from './App';
+import React from "react";
+import ReactDOM from "react-dom";
+import "./globalstyle.scss";
+import App from "./App";
 
-
-import { Server, Model } from "miragejs";
-
+// import { Server, Model } from "miragejs";
 
 // new Server({
 //   models: {
@@ -54,9 +52,4 @@ import { Server, Model } from "miragejs";
 //   },
 // });
 
-ReactDOM.render(
-    <App />,
-  document.getElementById('root')
-);
-
-
+ReactDOM.render(<App />, document.getElementById("root"));

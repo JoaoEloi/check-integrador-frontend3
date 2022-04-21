@@ -50,6 +50,12 @@ export default function Header() {
                     </Link> 
                 </li>
 
+                <li>
+                    <Link to="/login">
+                    <Button variant="dark" className="header_buttons_item">Login</Button>
+                    </Link>
+                </li>
+
             </ul>
 
         </header>

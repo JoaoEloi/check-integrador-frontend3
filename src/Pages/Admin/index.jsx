@@ -9,125 +9,125 @@ import ImgTeste from '../../assets/thumbnail_destaque_smash-burger-le-pingue.png
 
 export default function Administracao() {
 
-    const [show, setShow] = useState(false);
+    // const [show, setShow] = useState(false);
 
-    const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
+    // const handleClose = () => setShow(false);
+    // const handleShow = () => setShow(true);
 
-    const [produtos, setProdutos] = useState([]);
-    const [loading, setLoading] = useState(false);
-    const [title, setTitle] = useState("");
-    const [description, setDescription] = useState("");
-    const [price, setPrice] = useState("");
-    const [id, setId] = useState("");
-    useEffect(() => {
-    getProdutos();
-    }, []);
+    // const [produtos, setProdutos] = useState([]);
+    // const [loading, setLoading] = useState(false);
+    // const [title, setTitle] = useState("");
+    // const [description, setDescription] = useState("");
+    // const [price, setPrice] = useState("");
+    // const [id, setId] = useState("");
+    // useEffect(() => {
+    // getProdutos();
+    // }, []);
 
-    const Toast = Swal.mixin({
-        toast: true,
-        position: 'top-end',
-        showConfirmButton: false,
-        timer: 3000,
-        timerProgressBar: true,
-        didOpen: (toast) => {
-        toast.addEventListener('mouseenter', Swal.stopTimer)
-        toast.addEventListener('mouseleave', Swal.resumeTimer)
-        }
-    })
+    // const Toast = Swal.mixin({
+    //     toast: true,
+    //     position: 'top-end',
+    //     showConfirmButton: false,
+    //     timer: 3000,
+    //     timerProgressBar: true,
+    //     didOpen: (toast) => {
+    //     toast.addEventListener('mouseenter', Swal.stopTimer)
+    //     toast.addEventListener('mouseleave', Swal.resumeTimer)
+    //     }
+    // })
     
 
-    async function getProdutos() {
-    setLoading(true);
-    try {
-        const data = await fetch("http://localhost:3000/api/produto");
+    // async function getProdutos() {
+    // setLoading(true);
+    // try {
+    //     const data = await fetch("http://localhost:3000/api/produto");
 
-        const { produtos } = await data.json();
+    //     const { produtos } = await data.json();
 
-        setProdutos(produtos);
-    } catch (error) {
-        alert("Houve um erro ao comunicar com o servidor");
-    }
-    setLoading(false);
-    }
+    //     setProdutos(produtos);
+    // } catch (error) {
+    //     alert("Houve um erro ao comunicar com o servidor");
+    // }
+    // setLoading(false);
+    // }
 
-    async function newProduto(event) {
-    event.preventDefault();
+    // async function newProduto(event) {
+    // event.preventDefault();
 
-    if (!title || !description || !price) {
-        alert("Preencha todos os campos");
-    } else {
-        const body = {
-        title,
-        price,
-        description,
-        };
+    // if (!title || !description || !price) {
+    //     alert("Preencha todos os campos");
+    // } else {
+    //     const body = {
+    //     title,
+    //     price,
+    //     description,
+    //     };
 
-        try {
-        await fetch("http://localhost:3000/api/produto", {
-            method: "POST",
-            body: JSON.stringify(body),
-        });
-        alert("Cadastrado com sucesso");
-        clearStates();
-        getProdutos();
-        } catch (error) {
-        alert("Erro ao cadastrar Produto");
-        }
-    }
-    }
+    //     try {
+    //     await fetch("http://localhost:3000/api/produto", {
+    //         method: "POST",
+    //         body: JSON.stringify(body),
+    //     });
+    //     alert("Cadastrado com sucesso");
+    //     clearStates();
+    //     getProdutos();
+    //     } catch (error) {
+    //     alert("Erro ao cadastrar Produto");
+    //     }
+    // }
+    // }
 
-    function fillStates(produto) {
-        setTitle(produto.title);
-        setPrice(produto.price);
-        setDescription(produto.description);
-        setId(produto.id);
-        handleShow();
-        }
+    // function fillStates(produto) {
+    //     setTitle(produto.title);
+    //     setPrice(produto.price);
+    //     setDescription(produto.description);
+    //     setId(produto.id);
+    //     handleShow();
+    //     }
 
-        async function editProduto(event) {
-            event.preventDefault();
-            try {
-                const body = {
-                title,
-                price,
-                description,
-                };
-                await fetch("http://localhost:3000/api/produto/" + id, {
-                method: "PATCH",
-                body: JSON.stringify(body),
-                });
-                alert("Produto alterado");
-                clearStates();
-                getProdutos();
-            } catch (error) {
-                alert("Erro ao alterar");
-            }
-            }
-
-
-    async function deleteProduto(id) {
-    try {
-        await fetch("http://localhost:3000/api/produto/" + id, {
-        method: "DELETE",
-        });
-        Toast.fire({
-            icon: 'success',
-            title: 'Produto excluído com sucesso'
-        })
-        getProdutos();
-    } catch (error) {
-        alert("Erro ao deletar produto");
-    }
-    }
+    //     async function editProduto(event) {
+    //         event.preventDefault();
+    //         try {
+    //             const body = {
+    //             title,
+    //             price,
+    //             description,
+    //             };
+    //             await fetch("http://localhost:3000/api/produto/" + id, {
+    //             method: "PATCH",
+    //             body: JSON.stringify(body),
+    //             });
+    //             alert("Produto alterado");
+    //             clearStates();
+    //             getProdutos();
+    //         } catch (error) {
+    //             alert("Erro ao alterar");
+    //         }
+    //         }
 
 
-    function clearStates() {
-    setId("");
-    setTitle("");
-    setPrice("");
-    setDescription("");
-    }
+    // async function deleteProduto(id) {
+    // try {
+    //     await fetch("http://localhost:3000/api/produto/" + id, {
+    //     method: "DELETE",
+    //     });
+    //     Toast.fire({
+    //         icon: 'success',
+    //         title: 'Produto excluído com sucesso'
+    //     })
+    //     getProdutos();
+    // } catch (error) {
+    //     alert("Erro ao deletar produto");
+    // }
+    // }
+
+
+    // function clearStates() {
+    // setId("");
+    // setTitle("");
+    // setPrice("");
+    // setDescription("");
+    // }
 
 
     return (
@@ -138,7 +138,7 @@ export default function Administracao() {
                             <h1>Admin</h1>
                         </div>
 
-                <Modal 
+                {/* <Modal 
                 handleClose={handleClose}
                 handleShow={handleShow}
                 show={show}
@@ -162,7 +162,7 @@ export default function Administracao() {
                             </Card>
                         ))}
                         {loading && <h3>Carregando dados...</h3>}
-                    </section>
+                    </section> */}
             </div>
         </>
 )

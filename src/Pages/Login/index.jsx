@@ -3,28 +3,47 @@ import { Formik, Form, Field } from 'formik';
 import * as Yup from 'yup';
 import Button from 'react-bootstrap/Button'
 import Swal from 'sweetalert2'
+import { BrowserRouter, Routes, Route, useLocation, Navigate, Link } from "react-router-dom";
+import Admin from '../Admin'
+
 
 export default function Login() {
 
-    const SignupSchema = Yup.object().shape({
-        userName: Yup.string()
-        .min(2, 'Muito curto!')
-        .max(50, 'Muito longo!')
-        .required('Insira seu nome de usuario'),
+    // const SignupSchema = Yup.object().shape({
+    //     userName: Yup.string()
+    //     .required('Insira seu nome de usuario'),
 
-        email: Yup.string()
-        .email('Email inválido')
-        .required('Insira seu email'),
+    //     email: Yup.string()
+    //     .email('Email inválido')
+    //     .required('Insira seu email'),
 
-        password: Yup.string()
-        .required('Senha inválida')
-        .min(2, 'Muito curto!')
-        .max(50, 'Muito longo!'),
-    });
+    //     password: Yup.string()
+    //     .required('Senha inválida'),
+    // });
 
-    // function onSubmit(values) {
-    //     alert(values.email);
-    // }
+
+
+    const location = useLocation();
+
+    function onSubmit(values, actions) {
+        // <Navigate To="/" replace state={{from: location}} />
+    }
+
+    
+
+    function validate(values) {
+
+        const errors = {};
+
+        if(!values.userName | values.userName !== "Adm") {
+        errors.userName = "Usuário incorreto"
+        }else if(!values.email | values.email !== "OAdmEstaOn@gmail.com") {
+            errors.email = "Email incorreto"
+        } else if(!values.password | values.password !== "VaiComeçarABaderna") {
+            errors.password = "Senha incorreta"
+        }
+        return errors;
+    }
 
     return (
 
@@ -33,19 +52,16 @@ export default function Login() {
                 <h1 className="h1-do-login">Signup</h1>
 
                 <Formik
+                onSubmit={onSubmit}
+                validate={validate}
+                // validationSchema={SignupSchema}
 
                 initialValues={{
                     userName: '',
                     password: '',
                     email: '',
-                }}
+                }}>
 
-                validationSchema={SignupSchema}
-                onSubmit={values => {
-                    // same shape as initial values
-                    alert(values);
-                }}
-                >
                 {({ errors, touched }) => (
                     <Form className="form_login_itens">
                         <div className="inputs_do_login">
@@ -66,7 +82,7 @@ export default function Login() {
                             ) : null}
 
                             
-                                <button  className="button-login" type="submit">Submit</button>
+                                <button  className="button-login" type="submit">Entrar</button>
                                 
                         </div>
                     </Form>
@@ -76,15 +92,15 @@ export default function Login() {
             <Button className="button_info" variant="outline-info" onClick={() => Swal.fire({
                             title: 'Surpresa',
                             html:
-                                    'Usuário:<b>Adm</b>. <br/>' +
-                                    'Email: <b>OAdmEstaOn@gmail.com</b>. <br/> ' +
-                                    'Senha: <b>VaiComeçarABaderna</b>.',
+                                    'Usuário:<b>Adm</b> . <br/>' +
+                                    'Email: <b>OAdmEstaOn@gmail.com</b> . <br/> ' +
+                                    'Senha: <b>VaiComeçarABaderna</b> .',
                             width: 600,
                             padding: '3em',
                             color: '#716add',
                             backdrop: `
                                 rgba(0,0,123,0.4)
-                                url("/images/nyan-cat.gif")
+                                url("https://www.nyan.cat/cats/technyancolor.gif")
                                 left top
                                 no-repeat`
                 })}
